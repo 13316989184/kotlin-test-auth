@@ -1,0 +1,77 @@
+# \u6570\u636E\u6E90\u57FA\u7840\u914D\u7F6E
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/halo_data
+    username: root
+    password: 123456
+#jpa setting
+  jpa:
+    show-sql: true
+    # jode time use
+    properties:
+        jadira:
+          usertype:
+          autoRegisterUserTypes: true
+    # data - jpa
+    #hibernate:
+    #    ddl-auto: create
+    #\u751F\u6210ddl
+    generate-ddl: true
+    #\u5F00\u542Fopensession
+    open-in-view: true
+  #freemarker
+  freemarker:
+    settings:
+      #object_wrapper: com.control.back.halo.basic.utils.FreemarkerObjectWrapper
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      template_update_delay: 0
+  http:
+    multipart:
+      max-file-size: 50Mb
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+    type: EHCACHE
+
+#shiro
+shiro:
+  realm: com.control.back.halo.authorization.shiro.realm.UserRealm
+  login-url: /login.html
+  success-url: /index.html
+  unauthorized-url: /
+   #filter chian
+  filterChainDefinitions:  
+    "/login": anon
+    "/login/**": anon
+    "/logout": logout
+    "/css/**": anon
+    "/fonts/**": anon
+    "/img/**": anon
+    "/js/**": anon
+    "/**": authc
+    
+# \u4EE3\u7801
+server:
+  port: 801
+
+#\u8BB0\u5F55\u65E5\u5FD7\u4FE1\u606F
+logging:
+  config: classpath:logback.xml
+
+# halo.frame.variables \u914D\u7F6E
+halo:
+  freemarker: #定义页面显示参数
+    settings:
+      function-type:
+        "1": 分类
+        "2": 菜单
+        "3": 连接
+        "4": 按钮
+    variables:
+      basename: halo.system
+      default-role: 3
+      base-url: http://127.0.0.1/

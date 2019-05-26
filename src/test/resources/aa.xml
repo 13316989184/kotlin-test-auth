@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssetTradeDto>
+    <tradeid>T2017052118744</tradeid>
+    <tradedate>2017-08-30</tradedate>
+    <tradeamount>85700000</tradeamount>
+    <statustype>T</statustype>
+    <querytype>Z</querytype>
+    <AssetTradeDetailDto>
+        <assetcode>BD-20170321-0001</assetcode>
+        <tradedetaildate>2017-08-30</tradedetaildate>
+        <tradedetailamount>5000000</tradedetailamount>
+    </AssetTradeDetailDto>
+</AssetTradeDto>
