@@ -14,7 +14,7 @@
     </parent>
 
     <properties>
-        <shiro.version>1.2.4</shiro.version>
+        <shiro.version>1.9.1</shiro.version>
         <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
